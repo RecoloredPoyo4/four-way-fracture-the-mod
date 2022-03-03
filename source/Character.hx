@@ -321,8 +321,30 @@ class Character extends FlxSprite
 				antialiasing = false;
 
 			case 'sonic':
-				tex = Paths.getSparrowAtlas('characters/Sonic_EXE_Assets');
+				tex = Paths.getSparrowAtlas('moddedinchars/Poyo');
 				frames = tex;
+				
+				animation.addByPrefix('idle', 'Idle', 24, false);
+				animation.addByPrefix('singUP', 'Up', 24, false);
+        animation.addByPrefix('singLEFT', 'Right', 24, false);
+				animation.addByPrefix('singRIGHT', 'Left', 24, false);
+				animation.addByPrefix('singDOWN', 'Down', 24, false);
+				animation.addByPrefix('dodge', 'Right', 24, false);
+
+				addOffset('idle');
+				addOffset("singUP", 94, 8);
+				addOffset("singRIGHT", 50, 0);
+				addOffset("singLEFT", 181, 0);
+				addOffset("singDOWN", 0, -47);
+
+				playAnim('idle');
+
+				flipX = true;
+				
+				/*
+				
+				OG SONC.EXE CHAR CODE
+				
 				animation.addByPrefix('idle', 'SONICmoveIDLE', 24);
 				animation.addByPrefix('singUP', 'SONICmoveUP', 24);
 				animation.addByPrefix('singRIGHT', 'SONICmoveRIGHT', 24);
@@ -345,6 +367,7 @@ class Character extends FlxSprite
 				addOffset("singDOWN-alt", 50, -10);
 
 				playAnim('idle');
+				*/
 			case 'sonicfun':
 				tex = Paths.getSparrowAtlas('characters/SonicFunAssets');
 				frames = tex;
