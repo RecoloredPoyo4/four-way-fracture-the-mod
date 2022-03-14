@@ -99,50 +99,26 @@ class Character extends FlxSprite
 				antialiasing = false;
 
 			case 'bf':
-				var tex = Paths.getSparrowAtlas('characters/BOYFRIEND', 'shared');
+				var tex = Paths.getSparrowAtlas('shitbox/poyolmao','shared');
 				frames = tex;
+				animation.addByPrefix('idle', 'Idle', 16, false);
+				animation.addByPrefix('singUP', 'Up', 8, false);
+        animation.addByPrefix('singLEFT', 'Left', 8, false);
+				animation.addByPrefix('singRIGHT', 'Right', 8, false);
+				animation.addByPrefix('singDOWN', 'Down', 8, false);
+				animation.addByPrefix('dodge', 'Right', 8, false);
 
-				trace(tex.frames.length);
-
-				animation.addByPrefix('idle', 'BF idle dance', 24, false);
-				animation.addByPrefix('singUP', 'BF NOTE UP0', 24, false);
-				animation.addByPrefix('singLEFT', 'BF NOTE LEFT0', 24, false);
-				animation.addByPrefix('singRIGHT', 'BF NOTE RIGHT0', 24, false);
-				animation.addByPrefix('singDOWN', 'BF NOTE DOWN0', 24, false);
-				animation.addByPrefix('singUPmiss', 'BF NOTE UP MISS', 24, false);
-				animation.addByPrefix('singLEFTmiss', 'BF NOTE LEFT MISS', 24, false);
-				animation.addByPrefix('singRIGHTmiss', 'BF NOTE RIGHT MISS', 24, false);
-				animation.addByPrefix('singDOWNmiss', 'BF NOTE DOWN MISS', 24, false);
-				animation.addByPrefix('hey', 'BF HEY', 24, false);
-
-				animation.addByPrefix('firstDeath', "BF dies", 24, false);
-				animation.addByPrefix('deathLoop', "BF Dead Loop", 24, true);
-				animation.addByPrefix('deathConfirm', "BF Dead confirm", 24, false);
-
-				animation.addByPrefix('dodge', "boyfriend dodge", 24, false);
-
-				animation.addByPrefix('scared', 'BF idle shaking', 24);
-
-				addOffset('idle', -5);
-				addOffset("singUP", -29, 27);
-				addOffset("singRIGHT", -38, -7);
-				addOffset("singLEFT", 12, -6);
-				addOffset("singDOWN", -10, -50);
-				addOffset("singUPmiss", -29, 27);
-				addOffset("singRIGHTmiss", -30, 21);
-				addOffset("singLEFTmiss", 12, 24);
-				addOffset("singDOWNmiss", -11, -19);
-				addOffset("hey", 7, 4);
-				addOffset('firstDeath', 37, 11);
-				addOffset('deathLoop', 37, 5);
-				addOffset('deathConfirm', 37, 69);
-				addOffset('scared', -4);
-				addOffset('dodge');
+				addOffset('idle');
+				addOffset("singUP", -8, -32);
+				addOffset("singRIGHT", -63, -6);
+				addOffset("singLEFT", 60, -7);
+				addOffset("singDOWN", 22, -80);
 
 				playAnim('idle');
 
 				flipX = true;
-
+				
+				setGraphicSize(Std.int(width * 1.1));
 			case 'bf-flipped-for-cam':
 				var tex = Paths.getSparrowAtlas('characters/BOYFRIEND', 'shared');
 				frames = tex;
@@ -321,31 +297,6 @@ class Character extends FlxSprite
 				antialiasing = false;
 
 			case 'sonic':
-				tex = Paths.getSparrowAtlas('moddedinchars/Poyo');
-				frames = tex;
-				
-				animation.addByPrefix('idle', 'Idle', 24, false);
-				animation.addByPrefix('singUP', 'Up', 24, false);
-        animation.addByPrefix('singLEFT', 'Right', 24, false);
-				animation.addByPrefix('singRIGHT', 'Left', 24, false);
-				animation.addByPrefix('singDOWN', 'Down', 24, false);
-				animation.addByPrefix('singLAUGH', 'Up', 24, false);
-
-				addOffset('idle');
-				addOffset("singUP", 94, 8);
-				addOffset("singRIGHT", 50, 0);
-				addOffset("singLEFT", 181, 0);
-				addOffset("singDOWN", 0, -47);
-				addOffset("singLAUGH", 94, 8);
-
-				playAnim('idle');
-
-				flipX = true;
-				
-				/*
-				
-				OG SONC.EXE CHAR CODE
-				
 				animation.addByPrefix('idle', 'SONICmoveIDLE', 24);
 				animation.addByPrefix('singUP', 'SONICmoveUP', 24);
 				animation.addByPrefix('singRIGHT', 'SONICmoveRIGHT', 24);
@@ -368,7 +319,6 @@ class Character extends FlxSprite
 				addOffset("singDOWN-alt", 50, -10);
 
 				playAnim('idle');
-				*/
 			case 'sonicfun':
 				tex = Paths.getSparrowAtlas('characters/SonicFunAssets');
 				frames = tex;
