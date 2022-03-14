@@ -416,14 +416,6 @@ class PlayState extends MusicBeatState
 				dad = new Character(61.15, -94.75, 'tails');
 				add(dad);
 				remove(dad);
-
-				boyfriend = new Boyfriend(466.1, 685.6 - 300, 'bf-perspective-flipped');
-				add(boyfriend);
-				remove(boyfriend);
-
-				boyfriend = new Boyfriend(466.1, 685.6 - 300, 'bf-perspective');
-				add(boyfriend);
-				remove(boyfriend);
 			}
 			else if (SONG.song.toLowerCase() == 'sunshine')
 			{
@@ -464,10 +456,6 @@ class PlayState extends MusicBeatState
 				dad3.alpha = 0.01;
 				add(dad3);
 				remove(dad3);
-
-				boyfriend = new Boyfriend(2040.55 - 200, 685.6 - 130, 'bf-super');
-				add(boyfriend);
-				remove(boyfriend);
 
 				var poo4:FlxSprite = new FlxSprite();
 				add(poo4);
@@ -1468,7 +1456,7 @@ class PlayState extends MusicBeatState
 				camPos.set(dad.getGraphicMidpoint().x, dad.getGraphicMidpoint().y);
 		}
 
-		boyfriend = new Boyfriend(770, 450, SONG.player1);
+		boyfriend = new Boyfriend(770, 100 + 90, SONG.player1);
 
 		// REPOSITIONING PER STAGE
 		switch (curStage)
@@ -6980,10 +6968,6 @@ class PlayState extends MusicBeatState
 
 					iconP2.animation.play('beast');
 
-					remove(boyfriend);
-					boyfriend = new Boyfriend(502.45 + 200, 370.45, 'bf-perspective-flipped');
-					add(boyfriend);
-
 				case 1296: // switch to knuckles facing left facing right and bf facing right, and cool static
 
 					FlxTween.tween(FlxG.camera, {zoom: 1.1}, 2, {ease: FlxEase.cubeOut});
@@ -7025,16 +7009,6 @@ class PlayState extends MusicBeatState
 
 					boyfriend.flipX = true;
 
-					boyfriend.addOffset('idle', 0, -2); // flipped offsets for flipped normal bf
-					boyfriend.addOffset("singUP", 10, 27);
-					boyfriend.addOffset("singRIGHT", 44, -7);
-					boyfriend.addOffset("singLEFT", -22, -7);
-					boyfriend.addOffset("singDOWN", -13, -52);
-					boyfriend.addOffset("singUPmiss", 13, 24);
-					boyfriend.addOffset("singRIGHTmiss", 44, 20);
-					boyfriend.addOffset("singLEFTmiss", -26, 15);
-					boyfriend.addOffset("singDOWNmiss", -11, -20);
-
 					doP3JumpKNUCKLES();
 
 				case 2320:
@@ -7061,21 +7035,7 @@ class PlayState extends MusicBeatState
 
 					iconP2.animation.play('beast');
 
-					remove(boyfriend);
-					boyfriend = new Boyfriend(502.45 - 350, 370.45, 'bf-perspective');
-					add(boyfriend);
-
 					boyfriend.flipX = false;
-
-					boyfriend.addOffset('idle', 5, 4);
-					boyfriend.addOffset("singUP", 23, 63);
-					boyfriend.addOffset("singLEFT", 31, 9);
-					boyfriend.addOffset("singRIGHT", -75, -15);
-					boyfriend.addOffset("singDOWN", -51, -1);
-					boyfriend.addOffset("singUPmiss", 20, 135);
-					boyfriend.addOffset("singLEFTmiss", 10, 92);
-					boyfriend.addOffset("singRIGHTmiss", -70, 85);
-					boyfriend.addOffset("singDOWNmiss", -53, 10);
 
 					dad.flipX = true;
 				case 2823:
@@ -7119,20 +7079,6 @@ class PlayState extends MusicBeatState
 					dad.addOffset("singDOWN", 49, -95);
 					dad.addOffset('laugh', -10, 210);
 
-					remove(boyfriend);
-					boyfriend = new Boyfriend(466.1 + 200, 685.6 - 250, 'bf');
-					add(boyfriend);
-
-					boyfriend.addOffset('idle', -5);
-					boyfriend.addOffset("singUP", -29, 27);
-					boyfriend.addOffset("singRIGHT", -38, -7);
-					boyfriend.addOffset("singLEFT", 12, -6);
-					boyfriend.addOffset("singDOWN", -10, -50);
-					boyfriend.addOffset("singUPmiss", -29, 27);
-					boyfriend.addOffset("singRIGHTmiss", -30, 21);
-					boyfriend.addOffset("singLEFTmiss", 12, 24);
-					boyfriend.addOffset("singDOWNmiss", -11, -19);
-
 				case 2887, 3015, 4039:
 					dad.playAnim('laugh', true);
 					dad.nonanimated = true;
@@ -7155,10 +7101,6 @@ class PlayState extends MusicBeatState
 					healthBar.createFilledBar(FlxColor.fromRGB(182, 0, 205), FlxColor.fromRGB(49, 176, 209));
 
 					iconP2.animation.play('beast');
-
-					remove(boyfriend);
-					boyfriend = new Boyfriend(502.45, 370.45, 'bf-perspective-flipped');
-					add(boyfriend);
 			}
 		}
 
